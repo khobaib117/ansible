@@ -1,0 +1,7 @@
+- name: playbook
+  hosts: vm3
+  tasks:
+    - name: "copy file" 
+      copy: src=test.txt dest=/tmp
+    - name: "insert into file"
+      lineinfile: path=/tmp/test.txt line="khobaib, Im and Im a devops Engineer and graduated from comsats"

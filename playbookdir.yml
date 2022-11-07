@@ -1,0 +1,61 @@
+#- name: this is our first playbook.
+#  hosts: vm2
+#  tasks:
+#    -  name: "make dir in vm2"
+#       command: mkdir -p /tmp/ansible
+#    -  name: "make file on vm2"
+#       command: touch /tmp/ansible/test.txt
+#    -  name: "copy hosts file "
+#       command: cp /etc/hosts /tmp/ansible/myhosts
+
+#- name: this is our second plybook.
+#  hosts: vms_servers
+#  tasks: 
+#    -  name: "create dir in tmp"
+#       command: mkdir -p /tmp/vms
+#    -  name : "creae file in both servers"
+#       command: touch /home/secondplaybook.txt
+
+#- name: playbook for change hostname
+#  hosts: vm3
+#  tasks:
+#    -  name: "change hostname"
+#       command: hostnamectl set-hostname vm3
+#- name: playbook for change ip.
+#  host: vm3
+#  tasks: 
+#    -  name: "change ip"
+#       command
+
+#- name: "Add user to virtual machines"
+#  hosts: vms_server
+#  tasks:
+#    -  command: groupadd admin
+#    -  name: "Playbook for add user"
+#       user: 
+#         name: ansible
+#         comment: ansible rok
+#         uid: 1040
+#         group: admin
+
+- name: "Add user to virtual machines"
+  hosts: vm2
+  tasks:
+    -  script: vm2.sh
+    -  name: "Playbook for add user"
+       user:
+         name: jamesvm022
+         shell: /bin/bash
+         groups: grp00000,grp00002
+         append: yes
+
+- name: "Add user to virtual machines"
+  hosts: vm3
+  tasks:
+    -  script: vm3.sh
+    -  name: "Playbook for add user"
+       user:
+         name: jamesvm033
+         shell: /bin/bash
+         groups: grp00000,grp00003
+         append: yes

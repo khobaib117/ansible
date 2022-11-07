@@ -1,0 +1,11 @@
+vm3 ansible_host=192.168.149.145 ansible_connection=ssh ansible_ssh_user=root ansible_ssh_pass=mm001
+vm2 ansible_host=192.168.149.144 ansible_connection=ssh ansible_ssh_user=root ansible_ssh_pass=mm001
+[vm2_server]
+vm2
+[vm3_server]
+vm3
+
+[vms_server]
+vm2
+vm3
+

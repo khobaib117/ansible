@@ -1,0 +1,10 @@
+- name: playbook for copy. 
+  hosts: vm3
+  tasks: 
+    - name: "creation of file"
+      copy: 
+        src: test1.yml 
+        dest: /tmp/
+        owner: khobaib
+        group: khan
+        mode: 755 
